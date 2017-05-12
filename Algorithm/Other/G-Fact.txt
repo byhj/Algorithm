@@ -1,0 +1,159 @@
+/*
+In C language, sizeof( ) is an operator. Though it looks like a function, it is an unary operator.
+
+For example in the following program, when we pass a++ to sizeof, the expression “a++” is not evaluated. However in case of functions, parameters are first evaluated, then passed to function.
+
+// C program to demonstrate that sizeof
+// is an operator
+#include<stdio.h>
+ 
+int main()
+{
+    int a = 5;
+    printf("%d\n", sizeof(++a));  //printf 5
+    printf("%d", a);
+    return 0;
+}
+1) type-name: type-name must be specified in parentheses.
+
+sizeof (type-name) 
+Run on IDE
+2) expression: expression can be specified with or without the parentheses.
+
+sizeof expression
+------------------------------------------------------------------------------
+
+To know the IP address(es) of a URL/website, nslookup can be used at the shell/command prompt (cmd.exe). It works on both types of operating systems i.e. Linux/Windows. For example, to know the IP address of our website, type nslookup www.geeksforgeeks.org at the shell/command prompt.
+
+
+------------------------------------------------------------------------------
+In ISO C, you can define main either to take no arguments, or to take two arguments that represent the command line arguments to the program, like this:
+
+int main (int argc, char *argv[])
+Run on IDE
+Other platform-dependent formats are also allowed by the C and C++ standards; for example, Unix (though not POSIX.1) and Microsoft Visual C++ have a third argument giving the program’s environment, otherwise accessible through getenv in stdlib.h:
+
+------------------------------------------------------------------------------
+
+
+Following are the things which a derived class inherits from its parent.
+1) Every data member defined in the parent class (although such members may not always be
+accessible in the derived class!)
+2) Every ordinary member function of the parent class (although such members may not always be
+accessible in the derived class!)
+3) The same initial data layout as the base class.
+
+Following are the things which a derived class doesn’t inherits from its parent :
+1) The base class’s constructors and destructor.
+2) The base class’s friends
+
+------------------------------------------------------------------------------
+
+In C, function parameters are always passed by value. Pass-by-reference is simulated in C by explicitly passing pointer values.
+------------------------------------------------------------------------------
+
+The C standard C99 allows inline functions and variable-length-arrays. So following functions are valid in C99 compliant compilers.
+
+Example for inline functions
+
+inline int max(int a, int b)
+{
+  if (a > b)
+    return a;
+  else
+    return b;
+} 
+ 
+a = max (x, y); 
+
+Run on IDE
+Example for variable length arrays
+
+float read_and_process(int n)
+{
+    float   vals[n];
+  
+    for (int i = 0; i < n; i++)
+        vals[i] = read_val();
+    return process(vals, n);
+}
+
+------------------------------------------------------------------------------
+
+Returned values of printf() and scanf()
+In C, printf() returns the number of characters successfully written on the output and scanf() returns number of items successfully read.
+
+For example, below program prints geeksforgeeks 13
+
+int main()
+{
+  printf(" %d", printf("%s", "geeksforgeeks"));
+  getchar();
+}  
+Run on IDE
+Irrespective of the string user enters, below program prints 1.
+
+int main()
+{
+  char a[50];  
+  printf(" %d", scanf("%s", a));
+  getchar();
+}  
+
+------------------------------------------------------------------------------
+
+What is return type of getchar(), fgetc() and getc() ?
+In C, return type of getchar(), fgetc() and getc() is int (not char). So it is recommended to assign the returned values of these functions to an integer type variable.
+
+char ch;
+while ((ch = getchar()) != EOF) 
+{
+   putchar(ch);
+}
+Run on IDE
+Here is a version that uses integer to compare the value of getchar().
+
+int in;  
+while ((in = getchar()) != EOF) 
+{
+   putchar(in);
+}
+
+------------------------------------------------------------------------------
+
+What is evaluation order of function parameters in C?
+It is compiler dependent in C. It is never safe to depend on the order of evaluation of side effects. For example, a function call like below may very well behave differently from one compiler to another:
+
+void func (int, int);
+   
+int i = 2;
+func (i++, i++);
+Run on IDE
+There is no guarantee (in either the C or the C++ standard language definitions) that the increments will be evaluated in any particular order. Either increment might happen first. func might get the arguments `2, 3′, or it might get `3, 2′, or even `2, 2′.
+------------------------------------------------------------------------------
+
+What are the operators that cannot be overloaded in C++?
+In C++, following operators can not be overloaded:
+
+. (Member Access or Dot operator)
+?: (Ternary or Conditional Operator )
+:: (Scope Resolution Operator)
+.* (Pointer-to-member Operator )
+sizeof (Object size Operator)
+typeid (Object type Operator)
+
+------------------------------------------------------------------------------
+Enumeration constants (enum values) are always of type int in C, whereas they are distinct types in C++ and may have size different from that of int.
+
+------------------------------------------------------------------------------
+The number of structurally different Binary Trees with n nodes is Catalan number Cn = (2n)!/(n+1)!*n!
+
+------------------------------------------------------------------------------
+Storage class of a variable determines whether the item has a global or local lifetime. In C, typedef is considered as a storage class like other storage classes (auto, register, static and extern), nevertheless the purpose of typedef is to assign alternative names to existing types.
+
+------------------------------------------------------------------------------
+
+A number of the form 2x + 1 (where x > 0) is prime if and only if x is a power of 2, i.e., x = 2n. So overall number becomes 22n + 1. Such numbers are called Fermat Number (Numbers of form 22n + 1). The first few Fermet numbers are 3, 5, 17, 257, 65537, 4294967297, ….
+
+An important thing to note is a number of the form 22n + 1) is not always prime. For example 225 + 1 = 25 + 1 = 232 + 1 = 4294967297 = 641 * 6700417.
+*/

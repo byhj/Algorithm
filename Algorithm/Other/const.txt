@@ -1,0 +1,20 @@
+/*
+const Behaviour in C and C++
+
+In C, the const qualified identifiers will have external linkage, where as in C++ it will have internal linkage. For example,
+
+In C++, the following statement
+
+float const interest_rate = 9.25;
+Run on IDE
+is implicitly defined as
+
+static float const interest_rate = 9.25;
+Run on IDE
+i.e. the scope of interest_rate is limited to the block in which it is defined.
+
+In C, the above statement will have external linkage when defined at file scope, i.e. it will be visible outside the current translation unit (source file).
+
+The internal linkage of const qualified variables have some advantages in C++. We will cover them in next article.
+
+*/

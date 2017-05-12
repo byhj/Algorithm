@@ -1,0 +1,47 @@
+/*
+In C, struct keyword must be used for declaring structure variables, but it is optional in C++.
+
+For example, following program gives error in C and works in C++.
+
+struct node {
+   int x;
+   node *next; // Error in C, struct must be there. Works in C++
+};
+ 
+int main()
+{
+   node a;  // Error in C, struct must be there. Works in C++
+}
+Run on IDE
+And following program works in both C and C++.
+
+struct node {
+   int x;
+   struct node *next;  // Works in both C and C++
+};
+ 
+int main()
+{
+   struct node a;  // Works in both C and C++
+}
+
+
+
+In C, a structure cannot have static members, but in C++ a structure can have static members.
+
+For example, following program causes compilation error in C, but works in C++.
+
+#include<stdio.h>
+ 
+struct test {
+  static int i;  // Error in C, but works in C++.
+};
+ 
+int main()
+{
+  struct test t;    
+  getchar();
+  return 0;
+}
+
+*/
