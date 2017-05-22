@@ -33,6 +33,7 @@ void unionSet(int x, int y)
 		parent[x] = y;
 	} else {
 		parent[y] = x;
+		//if same rank, add length one 
 		if (rank[x] == rank[y]) {
 		    ++rank[x];
 		}

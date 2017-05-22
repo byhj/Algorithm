@@ -28,23 +28,26 @@ The greedy choice is to always pick the next activity whose finish time is least
 3) Do following for remaining activities in the sorted array.
 
 */
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
 
 struct Activity {
     int start;
     int finish;
+    bool operator < (const Activity &act) {
+    	return this->finish < act.finish;
+	}
 };
-
-bool actComp(const Activity &lhs, const Activity &rhs)
-{
-    return lhs.finish < rhs.finish;
-}
 
 void findMax(vector<Activity> actVec)
 {
     sort(actVec.begin(), actVec.end());
     int i = 0;
     int cnt = 1;
-    cout << actVec[j].start << " " << actVec[j].finish << endl;
+    cout << actVec[i].start << " " << actVec[i].finish << endl;
     for (int j = 1; j < actVec.size(); ++j) {
         if (actVec[j].start >= actVec[i].finish) {
             cout << actVec[j].start << " " << actVec[j].finish << endl;
@@ -52,4 +55,11 @@ void findMax(vector<Activity> actVec)
             ++cnt;
         }
     }
+}
+
+int main()
+{
+	    vector<Activity> arr = {{5, 9}, {1, 2}, {3, 4}, {0, 6}, {5, 7}, {8, 9}};
+        findMax(arr);
+        return 0;
 }
